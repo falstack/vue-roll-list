@@ -38,17 +38,13 @@ export default {
     fetch: {
       type: Function,
       default: null
-    },
-    total: {
-      type: Number,
-      default: 0
     }
   },
   data() {
     return {
-      maxPage: this.total ? Math.ceil(this.total / this.count) : 0,
-      curPage: 1,
       loading: false,
+      curPage: 1,
+      maxPage: 0,
       counter: 0
     }
   },
@@ -86,7 +82,7 @@ export default {
           this.curPage++
         }
         if (newLength < this.count) {
-          this.maxPage = this.curPage
+          this.maxPage = Math.ceil(this.list.length / this.count)
         }
         if (!newLength) {
           this.curPage = 1

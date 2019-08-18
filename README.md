@@ -42,7 +42,7 @@ yarn add vue-roll-list
 | key | value | required | meaning |
 | --- | --- | --- | --- |
 | list | Array | Y | 数据列表 |
-| fetch | Function | Y | 加载下一页数据的函数 |
+| fetch | Function | Y | 加载下一页数据的函数，需要返回一个 promise |
 | count | Number > 0 | Y | 每页展示的个数 |
 | set-loading | Boolean | N | 是否开启自定义 loading，默认为 false |
 
